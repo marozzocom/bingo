@@ -17,3 +17,5 @@ export const rotateGrid = (grid: number[][]) =>
 
 export const ensureArray = <T>(value: T | Array<T>): Array<T> =>
   Array.isArray(value) ? value : [value]
+
+export const numberSort = (a: number, b: number) => a - b

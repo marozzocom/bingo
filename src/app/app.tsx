@@ -8,6 +8,7 @@ import { styled } from "theme/stitches"
 import Header from "components/header/header"
 import NameInput from "components/name-input/name-input"
 import Layout from "components/layout/layout"
+import { numberSort } from "helpers/helpers"
 
 const BallContainer = styled("div", {
   width: "$area"
@@ -68,7 +69,7 @@ const App = () => {
       <Button onClick={initialize}>Reset</Button>
       {!bingo && (
         <BallContainer>
-          {[...usedNumbers].sort().map(
+          {[...usedNumbers].sort(numberSort).map(
             (number, index) =>
               index > 0 && (
                 <Ball
@@ -85,7 +86,8 @@ const App = () => {
         <>
           <Header>Bingo!</Header>
           <p>
-            Your game took {Math.floor(duration / 1000)} seconds and {usedNumbers.length -1} turns.
+            Your game took {Math.floor(duration / 1000)} seconds and{" "}
+            {usedNumbers.length - 1} turns.
           </p>
         </>
       )}
