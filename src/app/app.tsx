@@ -2,7 +2,7 @@ import { useStore } from "app/store"
 import Card from "components/card/card"
 import Button from "components/button/button"
 import { useEffect } from "react"
-import { globalStyles } from "theme/global-styles"
+import { baseStyles } from "theme/base-styles"
 import Ball from "components/ball/ball"
 import { styled } from "theme/stitches"
 import Header from "components/header/header"
@@ -37,7 +37,7 @@ const App = () => {
     generateSolutions()
   }, [generateNumbers])
 
-  globalStyles()
+  baseStyles()
 
   useEffect(() => {
     const foundSolutions = solutions.filter((solution) =>

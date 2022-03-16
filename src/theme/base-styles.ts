@@ -1,7 +1,7 @@
 import { globalCss } from "theme/stitches"
 import { createTransition, durations } from "theme/transition"
 
-export const globalStyles = globalCss({
+export const baseStyles = globalCss({
   html: {
     backgroundColor: "$background"
   },
