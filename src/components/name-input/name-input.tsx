@@ -1,9 +1,11 @@
 import { styled } from "theme/stitches"
 import useStore from "store/store"
 import Header from "components/header/header"
+import Text from "components/text/text"
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react"
 import Button from "components/button/button"
 import Layout from "components/layout/layout"
+import { MAX_NAME_LENGTH } from "helpers/constants"
 
 const StyledInput = styled("input", {
   border: "none",
@@ -33,9 +35,11 @@ const NameInput = () => {
 
   return (
     <Layout>
-      <Header>Hi Stranger! Please tell me your name.</Header>
+      <Header>Hi Stranger!</Header>
+      <Text>Please tell me your name.</Text>
       <StyledInput
         ref={inputRef}
+        maxLength={MAX_NAME_LENGTH}
         value={draft}
         onChange={(event) => setDraft(event.target.value)}
         onKeyDown={handleKeyDown}

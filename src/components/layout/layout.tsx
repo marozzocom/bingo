@@ -9,7 +9,9 @@ const GitHub = styled("div", {
 })
 
 const StyledLayout = styled("div", {
-  margin: "$3"
+  width: "100vw",
+  boxSizing: "border-box",
+  padding: "$3"
 })
 
 const Layout = ({ children }: { children: ReactNode }) => (

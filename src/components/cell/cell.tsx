@@ -11,7 +11,12 @@ const Cell = styled("div", {
   fontSize: "$5",
   height: "$5",
   width: "$5",
-  filter: "none",
+  filter: "",
+  "@sm": {
+    height: "100%",
+    width: "100%",
+    fontSize: "$4"
+  },
   transition: createTransition(
     ["backgroundColor", "filter", "transform", "opacity", "box-shadow"],
     {

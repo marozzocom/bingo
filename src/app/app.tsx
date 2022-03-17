@@ -6,12 +6,21 @@ import { globalStyles } from "theme/global-styles"
 import Ball from "components/ball/ball"
 import { styled } from "theme/stitches"
 import Header from "components/header/header"
+import Text from "components/text/text"
 import NameInput from "components/name-input/name-input"
 import Layout from "components/layout/layout"
 import { numberSort } from "helpers/helpers"
 
 const BallContainer = styled("div", {
-  width: "$area"
+  width: "100%",
+  maxWidth: "$area"
+})
+
+const HeaderContainer = styled("div", {
+  display: "flex",
+  alignItems: "baseline",
+  width: "100%",
+  maxWidth: "$area"
 })
 
 const App = () => {
@@ -51,12 +60,12 @@ const App = () => {
 
   return (
     <Layout>
-      <Header>
-        Hi {name}!
+      <HeaderContainer>
+        <Header>Hi {name}!</Header>
         <Button small onClick={() => setName("")}>
           Edit
         </Button>
-      </Header>
+      </HeaderContainer>
       <Card />
       <Button onClick={drawNumber} disabled={bingo}>
         Draw number
@@ -80,10 +89,10 @@ const App = () => {
       {bingo && (
         <>
           <Header>Bingo!</Header>
-          <p>
+          <Text>
             Your game took {Math.floor(duration / 1000)} seconds and{" "}
             {usedNumbers.length - 1} turns.
-          </p>
+          </Text>
         </>
       )}
     </Layout>

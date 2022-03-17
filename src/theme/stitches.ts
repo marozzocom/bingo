@@ -71,6 +71,9 @@ export const { styled, globalCss } = createStitches({
       4: 4000
     }
   },
+  media: {
+    sm: `(max-width: 540px)`
+  },
   utils: {
     p: (value: Stitches.PropertyValue<"padding">) => ({
       padding: value

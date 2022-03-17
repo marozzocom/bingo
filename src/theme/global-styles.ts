@@ -11,6 +11,9 @@ export const globalStyles = globalCss({
     position: "absolute",
     overflowX: "hidden"
   },
+  "h1, p": {
+    margin: 0
+  },
   "*": {
     "&:focus-visible": {
       outline: "2px solid $secondary",

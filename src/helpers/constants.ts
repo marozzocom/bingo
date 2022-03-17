@@ -5,3 +5,4 @@ export const GRID_SIZE = gridSize
 export const NUMBERS = gridSize * numbersPerColumn
 export const NUMBERS_PER_COLUMN = numbersPerColumn
 export const CENTER = Math.floor(gridSize / 2)
+export const MAX_NAME_LENGTH = 64

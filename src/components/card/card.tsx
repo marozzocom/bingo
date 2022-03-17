@@ -6,7 +6,12 @@ const Grid = styled("div", {
   display: "grid",
   gridAutoFlow: "column",
   gridTemplateColumns: "repeat(5, 100px)",
-  gridTemplateRows: "repeat(5, 100px)"
+  gridTemplateRows: "repeat(5, 100px)",
+  "@sm": {
+    gridGap: "3vw",
+    gridTemplateColumns: "repeat(5, calc((100vw - 2.5rem - 12vw) / 5))",
+    gridTemplateRows: "repeat(5, calc((100vw - 2.5rem - 12vw) / 5))"
+  }
 })
 
 const Card = () => {
