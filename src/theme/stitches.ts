@@ -58,8 +58,7 @@ export const { styled, globalCss } = createStitches({
       4: 800
     },
     fonts: {
-      serif: "Source Serif 4",
-      sans: "Outfit"
+      sans: "Patrick Hand"
     },
     shadows: {
       1: "0 0.25rem 0.5rem rgba(0, 0, 0, 0.125)"

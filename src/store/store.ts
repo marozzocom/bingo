@@ -4,7 +4,7 @@ import {
   generateColumn,
   getUniqueRandomNumbers
 } from "helpers/extract-solutions"
-import { GRID_SIZE, NUMBERS } from "constants"
+import { GRID_SIZE, NUMBERS } from "helpers"
 
 type Store = {
   bingo: boolean
@@ -36,7 +36,7 @@ const useStore = create<Store>((set, get) => ({
   availableNumbers: [],
   highlighted: [],
   name: "",
-  setName: (name) => set({name}),
+  setName: (name) => set({ name }),
   complete: () =>
     set(({ startTime }) => ({ bingo: true, duration: Date.now() - startTime })),
   highlight: (numbers) =>
@@ -75,4 +75,4 @@ const useStore = create<Store>((set, get) => ({
   }
 }))
 
-export { useStore }
+export default useStore

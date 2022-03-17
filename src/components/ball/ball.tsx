@@ -1,5 +1,5 @@
 import { styled } from "theme/stitches"
-import { createTransition, durations, easings } from "theme/transition"
+import { createTransition, durations } from "theme/transition"
 import { keyframes } from "@stitches/react"
 
 const animations = {
@@ -32,7 +32,7 @@ const Ball = styled("div", {
     duration: durations.subtle
   }),
   animation: createTransition(animations.enter, {
-    duration: durations.enter,
+    duration: durations.enter
   }),
   variants: {
     latest: {

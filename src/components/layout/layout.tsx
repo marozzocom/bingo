@@ -1,4 +1,4 @@
-import {styled} from "theme/stitches"
+import { styled } from "theme/stitches"
 
 const Layout = styled("div", {
   margin: "$3"

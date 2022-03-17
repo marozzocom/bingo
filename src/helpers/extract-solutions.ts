@@ -1,5 +1,10 @@
-import { rotateGrid, shuffle } from "helpers/helpers"
-import { CENTER, NUMBERS_PER_COLUMN, GRID_SIZE } from "constants"
+import {
+  rotateGrid,
+  shuffle,
+  CENTER,
+  NUMBERS_PER_COLUMN,
+  GRID_SIZE
+} from "helpers"
 
 const getDiagonalSolutions = (grid: number[][]) => [
   grid.map((row, index) => row[index]),

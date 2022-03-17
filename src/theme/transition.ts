@@ -1,7 +1,5 @@
 // Adapted from https://github.com/mui-org/material-ui/blob/master/packages/mui-material/src/styles/createTransitions.js
 
-import { ensureArray } from "helpers"
-
 const easings = {
   // This is the most common easing curve.
   easeInOut: "cubic-bezier(0.4, 0, 0.2, 1)",
@@ -28,7 +26,7 @@ type TransitionOptions = {
   easing?: string
   delay?: number | string // numbers will be formatted as ms
 }
-type Props = string | string[] | Object
+type Props = string | string[] | unknown
 
 const formatMs = (input: string | number) =>
   typeof input === "number" ? `${Math.round(input)}ms` : input
@@ -43,7 +41,8 @@ const createTransition = (
     delay = 0
   } = options
 
-  return ensureArray(props)
+  return [props]
+    .flat()
     .map((prop) => `${prop} ${formatMs(duration)} ${easing} ${formatMs(delay)}`)
     .join(",")
 }

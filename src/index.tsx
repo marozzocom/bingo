@@ -1,6 +1,6 @@
 import { render } from "react-dom"
 import { StrictMode } from "react"
-import {App} from "app"
+import { App } from "app"
 
 render(
   <StrictMode>

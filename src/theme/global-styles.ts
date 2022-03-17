@@ -1,11 +1,11 @@
 import { globalCss } from "theme/stitches"
-import { createTransition, durations } from "theme/transition"
 
-export const baseStyles = globalCss({
+export const globalStyles = globalCss({
   html: {
     backgroundColor: "$background"
   },
   body: {
+    margin: 0,
     fontFamily: `"Patrick Hand"`,
     minHeight: "100vh",
     position: "absolute",

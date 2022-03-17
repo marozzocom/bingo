@@ -1,5 +1,5 @@
 import Cell from "components/cell/cell"
-import { useStore } from "app/store"
+import useStore from "store/store"
 
 type Props = {
   row: number[]

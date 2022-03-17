@@ -1,5 +1,5 @@
 import { styled } from "theme/stitches"
-import { useStore } from "app/store"
+import useStore from "store/store"
 import Header from "components/header/header"
 import { KeyboardEventHandler, useEffect, useRef, useState } from "react"
 import Button from "components/button/button"
@@ -13,7 +13,7 @@ const StyledInput = styled("input", {
   color: "$white",
   borderRadius: "$1",
   fontSize: "$3",
-  fontFamily: "Patrick Hand"
+  fontFamily: "$sans"
 })
 
 const NameInput = () => {
@@ -29,7 +29,7 @@ const NameInput = () => {
       return
     }
     inputRef.current.focus()
-  }, [inputRef.current])
+  }, [])
 
   return (
     <Layout>

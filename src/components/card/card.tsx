@@ -1,5 +1,5 @@
 import { styled } from "theme/stitches"
-import { useStore } from "app/store"
+import useStore from "store/store"
 import Row from "components/row/row"
 
 const Grid = styled("div", {

@@ -1,8 +1,8 @@
-import { useStore } from "app/store"
+import useStore from "store/store"
 import Card from "components/card/card"
 import Button from "components/button/button"
 import { useEffect } from "react"
-import { baseStyles } from "theme/base-styles"
+import { globalStyles } from "theme/global-styles"
 import Ball from "components/ball/ball"
 import { styled } from "theme/stitches"
 import Header from "components/header/header"
@@ -15,13 +15,12 @@ const BallContainer = styled("div", {
 })
 
 const App = () => {
+  globalStyles()
+
   const {
     usedNumbers,
     drawNumber,
     solutions,
-    generateNumbers,
-    generateGrid,
-    generateSolutions,
     complete,
     highlight,
     bingo,
@@ -32,23 +31,19 @@ const App = () => {
   } = useStore()
 
   useEffect(() => {
-    generateNumbers()
-    generateGrid()
-    generateSolutions()
-  }, [generateNumbers])
-
-  baseStyles()
+    initialize()
+  }, [initialize])
 
   useEffect(() => {
-    const foundSolutions = solutions.filter((solution) =>
+    const solution = solutions.find((solution) =>
       solution.every((number) => usedNumbers.includes(number))
     )
 
-    if (foundSolutions.length > 0) {
+    if (solution) {
       complete()
-      foundSolutions.forEach((solution) => highlight(solution))
+      highlight(solution)
     }
-  }, [usedNumbers])
+  }, [complete, highlight, solutions, usedNumbers])
 
   if (!name) {
     return <NameInput />
