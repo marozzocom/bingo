@@ -1,6 +1,6 @@
 import { styled } from "theme/stitches"
 import { createTransition, durations } from "theme/transition"
-import { ComponentProps, ForwardedRef, forwardRef } from "react"
+import { ButtonHTMLAttributes, forwardRef, PropsWithChildren } from "react"
 
 const StyledButton = styled("button", {
   backgroundColor: "transparent",
@@ -16,7 +16,6 @@ const StyledButton = styled("button", {
   transition: createTransition(["background-color", "color", "opacity"], {
     duration: durations.fast
   }),
-
   "&:hover": {
     backgroundColor: "$primary",
     color: "$white"
@@ -38,13 +37,14 @@ const StyledButton = styled("button", {
   }
 })
 
-type Props = ComponentProps<typeof StyledButton> & {
+type Props = ButtonHTMLAttributes<any> & {
   small?: boolean
   disabled?: boolean
+  as?: any
 }
 
-const Button = forwardRef(
-  (props: Props, forwardedRef: ForwardedRef<HTMLButtonElement>) => {
+const Button = forwardRef<HTMLButtonElement, PropsWithChildren<Props>>(
+  (props, forwardedRef) => {
     return (
       <StyledButton
         ref={forwardedRef}
